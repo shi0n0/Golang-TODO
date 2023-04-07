@@ -1,0 +1,25 @@
+version: '3'
+services:
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'todo'
+      MYSQL_USER: 'todo'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./mysql:/var/lib/mysql
+  app:
+    build: .
+    ports:
+      - '8000:8000'
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_USER: todo
+      DB_PASSWORD: password
+      DB_NAME: todo
