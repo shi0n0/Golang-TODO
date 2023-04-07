@@ -1,0 +1,2 @@
+# Golang-TODO
+Golangの勉強の一環として作る簡単なTODOアプリです
