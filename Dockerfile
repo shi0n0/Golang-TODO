@@ -8,6 +8,8 @@ COPY . .
 
 # Install the required packages
 RUN apk update && apk add --no-cache git
+
+RUN go install github.com/cosmtrek/air@latest
 RUN go mod download
 
 # Build the application
@@ -17,4 +19,4 @@ RUN go build -o main .
 EXPOSE 8000
 
 # Run the application
-CMD ["./main"]
+CMD ["air"]

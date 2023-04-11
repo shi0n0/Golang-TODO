@@ -23,3 +23,5 @@ services:
       DB_USER: todo
       DB_PASSWORD: password
       DB_NAME: todo
+    volumes:
+      - .:/app
