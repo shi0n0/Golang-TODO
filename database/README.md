@@ -1,0 +1,2 @@
+db.goでHTMLのFormにて入力された値をデータベースに保存する処理を書きます。
+ConnectでMySQLに接続、SaveDataで保存します。(未完成)
